@@ -1,0 +1,12 @@
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ touch file2.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ls -l
+total 4
+-rwxrwxrwx 1 yasha yasha   0 Jan 29 19:47 file1.txt
+-rw-rw-r-- 1 yasha yasha   0 Jan 29 19:49 file2.txt
+-rw-rw-r-- 1 yasha yasha 542 Jan 29 19:48 Question_1.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ chmod 644 file2.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ls -l
+total 4
+-rwxrwxrwx 1 yasha yasha   0 Jan 29 19:47 file1.txt
+-rw-r--r-- 1 yasha yasha   0 Jan 29 19:49 file2.txt
+-rw-rw-r-- 1 yasha yasha 542 Jan 29 19:48 Question_1.txt

@@ -1,0 +1,16 @@
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ mkdir dir1
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ cd dir1
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ mkdir dir2
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ cd dir2
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1/dir2$ nano file3.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1/dir2$ cd ..
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ pwd
+/home/yasha/embedUr-Training/Linux-Training/dir1
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ ln -s /home/yasha/embedUr-Training/Linux-Training/dir1/dir2/file3.txt soft_link
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ cat soft_link
+ trying to see if soft link is working
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training/dir1$ ls -l
+total 8
+drwxrwxr-x 2 yasha yasha 4096 Jan 29 20:54 dir2
+lrwxrwxrwx 1 yasha yasha   63 Jan 29 20:58 soft_link -> /home/yasha/embedUr-Training/Linux-Training/dir1/dir2/file3.txt
+
