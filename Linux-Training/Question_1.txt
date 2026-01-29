@@ -1,11 +1,6 @@
-yasha@yasha-VirtualBox:~/Desktop$ cd ~
-yasha@yasha-VirtualBox:~$ cd embedUr-Training
-yasha@yasha-VirtualBox:~/embedUr-Training$ cd Linux-Training
 yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ touch file1.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ chmod a+x file1.txt
 yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ls -l
-total 0
--rw-rw-r-- 1 yasha yasha 0 Jan 29 19:47 file1.txt
-yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ chmod 777 file1.txt
-yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ls -l
-total 0
--rwxrwxrwx 1 yasha yasha 0 Jan 29 19:47 file1.txt
+total 48
+drwxrwxr-x 3 yasha yasha  4096 Jan 29 21:20 dir1
+-rwxrwxr-x 1 yasha yasha     0 Jan 29 21:51 file1.txt
