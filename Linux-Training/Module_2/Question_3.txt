@@ -1,0 +1,7 @@
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ cat log.txt | grep "ERROR" | grep -v "DEBUG" > filtered_log.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ cat filetred_log.txt
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ cat filtered_log.txt
+ERROR: Unable to connect to the database.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: Missing required parameter in the request.
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ 
