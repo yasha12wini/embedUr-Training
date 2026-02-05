@@ -1,0 +1,47 @@
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ chmod +x fileAnalyser.sh 
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ./fileAnalyser.sh --help
+./fileAnalyser.sh: illegal option -- -
+This is the help menu:
+OPTIONS:
+-d <dir>  Recursively seearch a directory
+-k <key>  Keyword to search.
+-f <file> file search.
+--help    Display help menu.
+
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ./fileAnalyser.sh -k "bash"
+Missing arguments. Parameters provided: -k
+This is the help menu:
+OPTIONS:
+-d <dir>  Recursively seearch a directory
+-k <key>  Keyword to search.
+-f <file> file search.
+--help    Display help menu.
+
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ./fileAnalyser.sh
+The keyword  isnt valid
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ nano fileAnalyser.sh 
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ./fileAnalyser.sh -d . -k "bin"
+bin present in file: ./args_check.sh
+bin present in file: ./arguments.sh
+bin present in file: ./backup_manager.sh
+bin present in file: ./case.sh
+bin present in file: ./child_script.sh
+bin present in file: ./condtional_if.sh
+bin present in file: ./exitStatus.sh
+bin present in file: ./fileAnalyser.sh
+bin present in file: ./file_attributes.sh
+bin present in file: ./fileCount.sh
+bin present in file: ./fileSearch.sh
+bin present in file: ./file_test.sh
+bin present in file: ./logical_and_or.sh
+bin present in file: ./logical_opp.sh
+bin present in file: ./logical_or.sh
+bin present in file: ./logical.sh
+bin present in file: ./read_parameters.sh
+bin present in file: ./recursion_ex.sh
+bin present in file: ./sum_recurse_ex.sh
+bin present in file: ./whileReadFiles_.sh
+bin present in file: ./while_.sh
+The process has been completed with an exit code of: 0
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ 
+
