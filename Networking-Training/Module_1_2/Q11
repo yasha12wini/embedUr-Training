@@ -80,3 +80,71 @@ Connection to localhost closed.
 
 #telnet
 
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo apt install openbsd-inetd inetutils-telnetd -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libevent-2.1-7t64 tcpd
+
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl daemon-reload
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ inetd.service enabled
+inetd.service: command not found
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ systemctl list-unit-files | grep inet
+inetd.service                                  enabled         enabled
+openbsd-inetd.service                          alias           -
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl start inetd
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl status inetd
+● inetd.service - Internet superserver
+     Loaded: loaded (/usr/lib/systemd/system/inetd.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-03-03 00:31:28 IST; 51s ago
+       Docs: man:inetd(8)
+   Main PID: 125504 (inetd)
+      Tasks: 1 (limit: 9432)
+     Memory: 552.0K (peak: 1.5M)
+        CPU: 19ms
+     CGroup: /system.slice/inetd.service
+             └─125504 /usr/sbin/inetd
+
+Mar 03 00:31:28 yasha-VirtualBox systemd[1]: Starting inetd.service - Internet superse>
+Mar 03 00:31:28 yasha-VirtualBox systemd[1]: Started inetd.service - Internet superser>
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ 
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl start inetd
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo ss -tulnp | grep :23
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ cat /etc/inetd.conf | grep telnet
+#<off># telnet	stream	tcp	nowait	root	/usr/sbin/tcpd	/usr/sbin/telnetd
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo nano /etc/inetd.conf
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl restart inetd
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo ss -tulnp | grep :23
+tcp   LISTEN 0      128          0.0.0.0:23         0.0.0.0:*    users:(("inetd",pid=128973,fd=7))                      
+tcp   LISTEN 0      128             [::]:23            [::]:*    users:(("inetd",pid=128973,fd=8))                      
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ telnet localhost 23
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+Linux 6.17.0-14-generic (yasha-VirtualBox) (pts/1)
+
+yasha-VirtualBox login: yasha
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.17.0-14-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+83 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+yasha@yasha-VirtualBox:~$ 
+telnet> quit
+Connection closed.
