@@ -1,0 +1,87 @@
+#Listing all the interfaces with ip link show
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:c7:f1:9d brd ff:ff:ff:ff:ff:ff
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:fe:9f:8e brd ff:ff:ff:ff:ff:ff
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether 8e:e8:f6:9d:8a:7b brd ff:ff:ff:ff:ff:ff
+
+
+#ifconfig
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 06:3e:02:bb:e2:50  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 19 overruns 0  carrier 0  collisions 0
+
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fd17:625c:f037:2:4c4f:958c:c6e8:eb66  prefixlen 64  scopeid 0x0<global>
+        inet6 fd17:625c:f037:2:a00:27ff:fec7:f19d  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::a00:27ff:fec7:f19d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:c7:f1:9d  txqueuelen 1000  (Ethernet)
+        RX packets 666448  bytes 961575603 (961.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 56775  bytes 3718038 (3.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.101  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::a2a2:6e80:9b0d:3784  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:fe:9f:8e  txqueuelen 1000  (Ethernet)
+        RX packets 11416  bytes 972772 (972.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 163  bytes 32595 (32.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 579  bytes 70483 (70.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 579  bytes 70483 (70.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ 
+
+
+
+1. MTU (Maximum Transmission Unit)
+The largest size of a packet that can be sent over this interface in one go.
+Physical and virtual interfaces (enp0s3, enp0s8, docker0) are set to 1500.
+If a packet is larger than this then it is fragmented.
+lo has an MTU of 65536. Since it's internal to the  CPU/RAM it can handle massive packets without fragmentation.
+
+2.Type (Ethernet)
+This identifies the hardware as Ethernet.
+
+3. Flags 
+UP: The interface is software-activated.
+RUNNING: The interface is physically "plugged in".
+BROADCAST: The interface can send a message to everyone on the local network.
+MULTICAST: The interface can send data to a specific group of devices simultaneously.
+
+4. TX/RX Statistics (Traffic Analysis)
+RX / TX:
+Packets: Total number of data chunks successfully moved.
+
+Bytes: Total data volume.
+Errors/Dropped: These should ideally be 0.
+Dropped: Usually happens if the kernel's buffer is full.
+Overruns: Indicates the CPU couldn't process the packets fast enough.
+
+5. Scope 
+Local and Global
+Scopeid 0x20 <link>: This means the IPv6 address is only valid for the local "wire".
+It cannot be used to talk to the internet.
+
+Scopeid 0x0 <global>: These are addresses that (theoretically) can be reached from the outside world.
+

@@ -1,0 +1,86 @@
+#PING 
+#It is used to check if a remote host is reachable 
+#It uses the icmp protocol
+#It operates by sending ICMP "echo request" packets to the target host and waits for an ICMP "echo reply"
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ping -c 3 google.com
+PING google.com (142.250.182.238) 56(84) bytes of data.
+64 bytes from tzdelb-bd-in-f14.1e100.net (142.250.182.238): icmp_seq=1 ttl=255 time=95.2 ms
+64 bytes from tzdelb-bd-in-f14.1e100.net (142.250.182.238): icmp_seq=2 ttl=255 time=90.2 ms
+64 bytes from tzdelb-bd-in-f14.1e100.net (142.250.182.238): icmp_seq=3 ttl=255 time=88.1 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 88.080/91.163/95.238/3.005 ms
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$
+
+#Fields
+#icmp_seq: displays the sequence number of each ICMP packet.
+
+#Time To Live (TTL)
+#The TTL field acts as a hop counter for the packet. 
+#TTL value is decremented by one each time the packet passes through a router.
+#If the counter reaches zero before the packet arrives at its destination the packet is discarded.
+
+#Time
+#measures the roundtrip time
+
+
+#ARP
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.56.1             ether   0a:00:27:00:00:11   C                     enp0s8
+10.0.2.3                 ether   52:55:0a:00:02:03   C                     enp0s3
+_gateway                 ether   52:55:0a:00:02:02   C                     enp0s3
+192.168.56.100           ether   08:00:27:86:d7:4c   C                     enp0s8
+
+#Understanding each field
+
+1. Address
+This is the IPv4 address of a device on the local network.
+The system uses ARP to resolve this IP to a MAC address before sending Ethernet frames.
+
+192.168.56.1: VirtualBox host-only adapter gateway.
+
+10.0.2.3: VirtualBox DNS server.
+
+_gateway: Default gateway 
+	  10.0.2.2 in your case
+
+192.168.56.100: Another host on the host-only network.
+
+2. HWtype (Hardware Type)
+
+Indicates the hardware protocol type.
+ether means Ethernet
+It tells the system what type of Layer 2 address format is being used.
+
+3. HWaddress
+
+This is the MAC address corresponding to the IP address.
+It is a 48-bit physical hardware address.
+Used at Layer 2 to deliver Ethernet frames.
+
+4. Flags
+
+This indicates the status of the ARP entry.
+
+C: Complete
+The ARP resolution was successful. The MAC address is known.
+M: Permanent entry 
+   manually added
+
+P: Published entry
+
+?: Incomplete.The MAC is not resolved yet
+
+5. Mask
+
+Rarely used in modern systems.
+In the past it was used for proxy ARP or subnet masking.
+
+6. Iface (Interface)
+
+Indicates which network interface learned this ARP entry.
+ARP entries are stored per interface because ARP works only within a local broadcast domain.

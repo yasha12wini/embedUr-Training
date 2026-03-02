@@ -1,0 +1,105 @@
+Every device in a network needs
+	Ip address
+	subnet mask
+	default gateway
+	dns server
+Manually configuring this for every device isnt scalable so we use Dynamic Host Configuration Protocol (DHCP).
+DHCP automates IP configuration using a client-server model.
+DHCP application layer protocol
+It runs overs UDP
+	Client port: 68
+	Server port: 67
+It follows a 4 step process called as DORA
+
+STEP 1: DHCPDISCOVER
+
+A device doesnt have ip address when it boots 
+It sends a broadcast packet
+
+Source IP: 0.0.0.0
+Destination IP: 255.255.255.255
+UDP 68 -> 67
+
+STEP 2: DHCPOFFER
+
+The DHCP server receives this request and does the following:
+Available IP pool
+Mac address of the client
+Lease database
+
+The server replies with
+The ip address
+subnet mask 
+default gateway
+DNS
+Lease time
+
+This could be a broadcast or a unicat.JUst on offer the ip isnt permanently assigned yet.
+
+STEP 3: DHCPREQUEST
+
+The client receives multiple offers.
+It chooses one server and broadcasts that it has accepted this particular offered ip. 
+This broadcast informs the other DHCP servers to withdraw their offers.
+
+STEP 4: DHCPACK
+
+The server confirms that the ip has been assigned and it starts the lease timer.
+
+LEASE MECHANISM
+
+IP assignment is not permanent.
+
+When lease reaches 50% time:
+	Client sends DHCPREQUEST directly to server to renew.
+	If server responds with DHCPACK:
+	Lease extended.
+
+If not:
+	Client eventually drops IP and restarts DORA.
+
+
+
+On Ubuntu the DHCP is handled by the Network manager or systemd-networkd
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ps aux | grep -E 'NetworkManager|systemd-networkd|dhclient'
+root         677  0.0  0.2 623384 20372 ?        Ssl  08:58   0:01 /usr/sbin/NetworkManager --no-daemon
+
+To see the current lease information us the following command
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ nmcli device show enp0s3
+GENERAL.DEVICE:                         enp0s3
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         08:00:27:C7:F1:9D
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     netplan-enp0s3
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveC>
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         10.0.2.15/24
+IP4.GATEWAY:                            10.0.2.2
+IP4.ROUTE[1]:                           dst = 10.0.2.0/24, nh = 0.0.0.0, mt = 1>
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 10.0.2.2, mt = 100
+IP4.DNS[1]:                             10.0.2.3
+IP6.ADDRESS[1]:                         fd17:625c:f037:2:a00:27ff:fec7:f19d/64
+IP6.ADDRESS[2]:                         fd17:625c:f037:2:512e:dbc1:26ef:8a54/64
+IP6.ADDRESS[3]:                         fe80::a00:27ff:fec7:f19d/64
+IP6.GATEWAY:                            fe80::2
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 256
+IP6.ROUTE[2]:                           dst = ::/0, nh = fe80::2, mt = 1024
+IP6.ROUTE[3]:                           dst = fd17:625c:f037:2::/64, nh = ::, m>
+
+
+Trying to capture the Dhcp packets using tcpdump by disconnecting and reconnecting the interface
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo nmcli device disconnect enp0s3
+Device 'enp0s3' successfully disconnected.
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo nmcli device connect enp0s3
+Device 'enp0s3' successfully activated with '1eef7e45-3b9d-3043-bee3-fc5925c90273'.
+
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo tcpdump -i enp0s3 port 67 or port 68 -n
+[sudo] password for yasha: 
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+10:37:04.147237 IP 0.0.0.0.68 > 255.255.255.255.67: BOOTP/DHCP, Request from 08:00:27:c7:f1:9d, length 300
+10:37:04.147581 IP 10.0.2.2.67 > 255.255.255.255.68: BOOTP/DHCP, Reply, length 548

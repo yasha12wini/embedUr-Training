@@ -1,0 +1,23 @@
+Duplicate IP means two devices in the same Layer 2 broadcast domain are configured with the same IPv4 address.
+
+Example:
+
+Device A -> 192.168.1.10
+Device B -> 192.168.1.10
+
+This is illegal.It causes ARP chaos.
+ARP does IP to MAC address resolution.
+
+If Device C wants to talk to 192.168.1.10. It sends an ARP request and both device A and B respond with their mac addresses.
+Due to this the traffic goes to either device randomly.
+
+This causes
+	Intermittent connectivity
+	Flapping communication
+	Session dropping
+
+This is called ARP instability.
+
+ARP table keeps changing MAC for same IP
+ARP table can be checked using the command 
+	ip neigh

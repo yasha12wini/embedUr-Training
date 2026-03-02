@@ -1,0 +1,79 @@
+#Archive and Verbose option
+#Verbose option shows exactly whats going on
+#The archive options preserves the owneship,permission, timestamps, symlinks and filestructure
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1$ cp -av ./files ./cpfiles
+'./files' -> './cpfiles'
+'./files/f1' -> './cpfiles/f1'
+'./files/f2' -> './cpfiles/f2'
+'./files/f3' -> './cpfiles/f3'
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1$ cd cpfiles
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1/cpfiles$ ls -l
+total 0
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f1
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f2
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f3
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1/cpfiles$ cd ..
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1$ cd files
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module-1/files$ ls -l
+total 0
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f1
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f2
+-rw-rw-r-- 1 yasha yasha 0 Feb 24 22:29 f3
+
+#Recursive copy option
+#copies all the files in the directories and subdirectories and preserves the structure 
+#but doesnt preserve the timestamp,ownership and permissions or symlinks
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ls
+cpfiles  files  Q1  Q10  Q11  Q8
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ cp -r files cp2files
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ls
+cp2files  cpfiles  files  Q1  Q10  Q11  Q8
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ls -al cp2files
+total 8
+drwxrwxr-x 2 yasha yasha 4096 Mar  2 17:26 .
+drwxrwxr-x 5 yasha yasha 4096 Mar  2 17:26 ..
+-rw-rw-r-- 1 yasha yasha    0 Mar  2 17:26 f1
+-rw-rw-r-- 1 yasha yasha    0 Mar  2 17:26 f2
+-rw-rw-r-- 1 yasha yasha    0 Mar  2 17:26 f3
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ 
+
+#scp command
+
+#On windows 
+Microsoft Windows [Version 10.0.26200.7922]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\yasha>scp D:\hi.txt yasha@192.168.56.101:/home/yasha/
+The authenticity of host '192.168.56.101 (192.168.56.101)' can't be established.
+ED25519 key fingerprint is SHA256:TE2haMSGC4e7dAPXCp+Vt7+jnBxKdQNBKjhkykkpz08.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Warning: Permanently added '192.168.56.101' (ED25519) to the list of known hosts.
+yasha@192.168.56.101's password:
+hi.txt                                    100%   15     1.8KB/s   00:00
+
+#windows is the host machine and this command transfers the hi.txt file securely to the linux vm
+yasha@yasha-VirtualBox:~$ ls -la hi.txt
+-rw-rw-r-- 1 yasha yasha 15 Mar  2 17:53 hi.txt
+yasha@yasha-VirtualBox:~$ 
+
+
+#scp command uses the secure shell protocol and it runs on port 22
+
+#p flag preserves the timestamps
+#r copies everything recursively
+
+C:\Users\yasha>scp -r -p D:\copy yasha@192.168.56.101:/home/yasha/
+yasha@192.168.56.101's password:
+hello.txt                                 100%   20     1.2KB/s   00:00
+hi.txt                                    100%   15     2.4KB/s   00:00
+
+C:\Users\yasha>
+
+#all the files have been copied successfully
+yasha@yasha-VirtualBox:~$ ls -l copy
+total 8
+-rw-rw-rw- 1 yasha yasha 20 Mar  2 22:17 hello.txt
+-rw-rw-rw- 1 yasha yasha 15 Mar  2 17:49 hi.txt
+yasha@yasha-VirtualBox:~$ 
+

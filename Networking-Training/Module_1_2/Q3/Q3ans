@@ -1,0 +1,52 @@
+#wireshark is a tool for packet capture and packet filtering
+#in windows it needs the npcap driver 
+#using wireshark we can see
+	frame
+	mac address
+	ip
+	tcp/udp
+	application protocols
+#wireshark reads the packets from the nic driver using the npcap driver
+
+There are two kinds of filtering:
+Capture Filter: Before packets are stored
+Display Filter: After capture
+
+#tcpdump uses BPF capture filters
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2/Q3$ sudo tcpdump -i enp0s3 port 53
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+22:51:56.147044 IP yasha-VirtualBox.59269 > 10.0.2.3.domain: 65277+ A? respawn.outlookindia.com. (42)
+22:51:56.153973 IP yasha-VirtualBox.44831 > 10.0.2.3.domain: 2480+ AAAA? respawn.outlookindia.com. (42)
+22:51:56.161759 IP yasha-VirtualBox.35798 > 10.0.2.3.domain: 63787+ HTTPS? respawn.outlookindia.com. (42)
+22:51:56.164955 IP yasha-VirtualBox.33462 > 10.0.2.3.domain: 51623+ A? www.thehindubusinessline.com. (46)
+22:51:56.172370 IP yasha-VirtualBox.49025 > 10.0.2.3.domain: 36272+ AAAA? www.thehindubusinessline.com. (46)
+
+#Breaking down the command
+-i enp0s3: captures on the main internet interface
+port 53 -> capture traffic where source or destination port is 53
+Port 53 = DNS
+DNS runs mainly over UDP and sometimes over tcp
+
+
+yasha-VirtualBox.59269
+Source port = 59269 
+its random ephemeral port
+
+10.0.2.3.domain
+Destination IP = 10.0.2.3
+domain = port 53 (DNS)
+
+65277+
+DNS transaction ID
+'+' means recursion desired flag set
+
+A?
+Type A query
+
+respawn.outlookindia.com.
+The domain being resolved
+
+(42)
+Packet length

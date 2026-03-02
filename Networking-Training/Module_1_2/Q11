@@ -1,0 +1,82 @@
+#INSTALL THE SSH SERVER 
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_&_2$ sudo apt install openssh-server
+[sudo] password for yasha: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libgl1-amber-dri libglapi-mesa libllvm19
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  ncurses-term openssh-sftp-server ssh-import-id
+
+#start the server and verify its status
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_&_2$ sudo systemctl start ssh
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_&_2$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: ena>
+     Active: active (running) since Mon 2026-03-02 09:09:18 IST; 3s ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 4710 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 4712 (sshd)
+      Tasks: 1 (limit: 9432)
+     Memory: 1.2M (peak: 1.5M)
+        CPU: 27ms
+     CGroup: /system.slice/ssh.service
+             └─4712 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Mar 02 09:09:18 yasha-VirtualBox systemd[1]: Starting ssh.service - OpenBSD Sec>
+Mar 02 09:09:18 yasha-VirtualBox sshd[4712]: Server listening on 0.0.0.0 port 2>
+Mar 02 09:09:18 yasha-VirtualBox sshd[4712]: Server listening on :: port 22.
+Mar 02 09:09:18 yasha-VirtualBox systemd[1]: Started ssh.service - OpenBSD Secu>
+
+#connect to the remote host 
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_&_2$ ss -tlnp | grep 22
+LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*          
+LISTEN 0      4096            [::]:22           [::]:*          
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_&_2$ ssh localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:TE2haMSGC4e7dAPXCp+Vt7+jnBxKdQNBKjhkykkpz08.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+yasha@localhost's password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.17.0-14-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+83 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+yasha@yasha-VirtualBox:~$ 
+
+#exiting the ssh shell
+
+yasha@yasha-VirtualBox:~$ exit
+logout
+Connection to localhost closed.
+
+#telnet
+
