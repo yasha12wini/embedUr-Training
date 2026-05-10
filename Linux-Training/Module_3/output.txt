@@ -1,0 +1,51 @@
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ nano backup_manager.sh
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ chmod +x backup_manager.sh
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ pwd
+/home/yasha/embedUr_training/shell_scripting
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ls
+25                 child_script.sh   file_attributes.sh  read_parameters.sh
+30                 condtional_if.sh  fileCount.sh        recursion_ex.sh
+5                  dir               fileSearch.sh       sum_recurse_ex.sh
+args_check.sh      exitStatus.sh     file_test.sh        test
+arguments.sh       file1             logical_and_or.sh   whileReadFiles_.sh
+backup_manager.sh  file123           logical_opp.sh      while_.sh
+case.sh            file12345         logical_or.sh
+cat                file2             logical.sh
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ ./backup_manager.sh "/home/yasha/embedUr_training/shell_scripting" "/home/yasha/embedUr_training/backup" ".sh"
+File Name: /home/yasha/embedUr_training/shell_scripting/args_check.sh   File Size: 273 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/arguments.sh   File Size: 275 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/backup_manager.sh   File Size: 1254 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/case.sh   File Size: 408 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/child_script.sh   File Size: 33 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/condtional_if.sh   File Size: 627 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/exitStatus.sh   File Size: 267 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/file_attributes.sh   File Size: 142 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/fileCount.sh   File Size: 277 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/fileSearch.sh   File Size: 275 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/file_test.sh   File Size: 797 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/logical_and_or.sh   File Size: 212 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/logical_opp.sh   File Size: 674 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/logical_or.sh   File Size: 159 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/logical.sh   File Size: 138 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/read_parameters.sh   File Size: 457 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/recursion_ex.sh   File Size: 201 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/sum_recurse_ex.sh   File Size: 174 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/whileReadFiles_.sh   File Size: 157 bytes
+File Name: /home/yasha/embedUr_training/shell_scripting/while_.sh   File Size: 252 bytes
+The processed report is saved at /home/yasha/embedUr_training/backup/backup_report.log
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ cat /home/yasha/embedUr_training/backup/backup_report.log
+SUMMARY
+The total number of files found is 20
+The total number of files procesed is 20
+The size of the files processed is 7052 
+The path of the backup directory is /home/yasha/embedUr_training/backup 
+yasha@yasha-VirtualBox:~/embedUr_training/shell_scripting$ cd ..
+yasha@yasha-VirtualBox:~/embedUr_training$ ls backup
+args_check.sh      condtional_if.sh    logical_and_or.sh   sum_recurse_ex.sh
+arguments.sh       exitStatus.sh       logical_opp.sh      whileReadFiles_.sh
+backup_manager.sh  file_attributes.sh  logical_or.sh       while_.sh
+backup_report.log  fileCount.sh        logical.sh
+case.sh            fileSearch.sh       read_parameters.sh
+child_script.sh    file_test.sh        recursion_ex.sh
+yasha@yasha-VirtualBox:~/embedUr_training$ 
+

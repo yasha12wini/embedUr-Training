@@ -1,0 +1,8 @@
+yasha@yasha-VirtualBox:~/Downloads$ find . -maxdepth 1 -type f -size +1M > Mb_files.txt
+yasha@yasha-VirtualBox:~/Downloads$ cat Mb_files
+yasha@yasha-VirtualBox:~/Downloads$ cat Mb_files.txt
+./DVCON_2025.zip
+./DVCON_2025 (2).zip
+./yosys-main.zip
+./riscv-toolchain-rv32imac-x86_64-ubuntu.tar.gz
+yasha@yasha-VirtualBox:~/Downloads$ 

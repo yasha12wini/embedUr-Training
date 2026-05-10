@@ -1,0 +1,55 @@
+1. VNC: Virtual Network Computing
+
+Examples
+RealVNC
+TightVNC
+
+VNC uses the RFB protocol (Remote Framebuffer Protocol).
+The server captures screen pixels
+Sends framebuffer updates to client
+Client sends back keyboard and mouse events
+
+VNC does not automatically bypass NAT.
+So to access the internet
+	Port forward 5900 on router
+	SSH tunneling
+
+Default Port: TCP 5900
+
+2. RDP: Remote Desktop Protocol
+Native Windows protocol.
+RDP protocol (Microsoft proprietary)
+
+Default Port: TCP 3389
+How It Works Internally
+
+It sends drawing commands and not raw pixels
+More bandwidth efficient.
+Supports device redirection like printers, drives, clipboard.
+
+
+3. TeamViewer
+
+it does not require port forwarding
+Uses cloud relay servers
+Both devices connect outbound to TeamViewer servers
+NAT traversal handled automatically
+
+Ports used are 
+Outbound: TCP 5938 (primary)
+Fallback: 443 or 80
+
+Both systems register with TeamViewer servers.
+They exchange IDs.
+Server establishes encrypted tunnel.
+Either direct peer-to-peer or relay server.
+
+4.  AnyDesk:
+
+It is similar architecture to TeamViewer
+Uses proprietary DeskRT codec
+Efficient compression
+Uses relay servers
+NAT traversal automatic
+
+Default outbound ports: TCP 80, 443, 6568

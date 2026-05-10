@@ -1,0 +1,390 @@
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 16:25 ?        00:00:02 /sbin/init splash
+root           2       0  0 16:25 ?        00:00:00 [kthreadd]
+root           3       2  0 16:25 ?        00:00:00 [pool_workqueue_release]
+root           4       2  0 16:25 ?        00:00:00 [kworker/R-rcu_gp]
+root           5       2  0 16:25 ?        00:00:00 [kworker/R-sync_wq]
+root           6       2  0 16:25 ?        00:00:00 [kworker/R-kvfree_rcu_reclai
+root           7       2  0 16:25 ?        00:00:00 [kworker/R-slub_flushwq]
+root           8       2  0 16:25 ?        00:00:00 [kworker/R-netns]
+root          13       2  0 16:25 ?        00:00:00 [kworker/R-mm_percpu_wq]
+root          14       2  0 16:25 ?        00:00:00 [rcu_tasks_kthread]
+root          15       2  0 16:25 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          16       2  0 16:25 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          17       2  0 16:25 ?        00:00:01 [ksoftirqd/0]
+root          18       2  0 16:25 ?        00:00:02 [rcu_preempt]
+root          19       2  0 16:25 ?        00:00:00 [rcu_exp_par_gp_kthread_work
+root          20       2  0 16:25 ?        00:00:00 [rcu_exp_gp_kthread_worker]
+root          21       2  0 16:25 ?        00:00:00 [migration/0]
+root          22       2  0 16:25 ?        00:00:00 [idle_inject/0]
+root          23       2  0 16:25 ?        00:00:00 [cpuhp/0]
+root          24       2  0 16:25 ?        00:00:00 [kdevtmpfs]
+root          25       2  0 16:25 ?        00:00:00 [kworker/R-inet_frag_wq]
+root          26       2  0 16:25 ?        00:00:00 [kauditd]
+root          27       2  0 16:25 ?        00:00:00 [khungtaskd]
+root          29       2  0 16:25 ?        00:00:00 [oom_reaper]
+root          31       2  0 16:25 ?        00:00:00 [kworker/R-writeback]
+root          32       2  0 16:25 ?        00:00:02 [kcompactd0]
+root          33       2  0 16:25 ?        00:00:00 [ksmd]
+root          34       2  0 16:25 ?        00:00:00 [khugepaged]
+root          35       2  0 16:25 ?        00:00:00 [kworker/R-kintegrityd]
+root          36       2  0 16:25 ?        00:00:00 [kworker/R-kblockd]
+root          37       2  0 16:25 ?        00:00:00 [kworker/R-blkcg_punt_bio]
+root          38       2  0 16:25 ?        00:00:00 [irq/9-acpi]
+root          39       2  0 16:25 ?        00:00:00 [kworker/R-tpm_dev_wq]
+root          40       2  0 16:25 ?        00:00:00 [kworker/R-ata_sff]
+root          41       2  0 16:25 ?        00:00:00 [kworker/R-md]
+root          42       2  0 16:25 ?        00:00:00 [kworker/R-md_bitmap]
+root          43       2  0 16:25 ?        00:00:00 [kworker/R-edac-poller]
+root          44       2  0 16:25 ?        00:00:00 [kworker/R-devfreq_wq]
+root          45       2  0 16:25 ?        00:00:00 [watchdogd]
+root          47       2  0 16:25 ?        00:00:00 [kswapd0]
+root          48       2  0 16:25 ?        00:00:00 [ecryptfs-kthread]
+root          49       2  0 16:25 ?        00:00:00 [kworker/R-kthrotld]
+root          50       2  0 16:25 ?        00:00:00 [kworker/R-acpi_thermal_pm]
+root          51       2  0 16:25 ?        00:00:00 [scsi_eh_0]
+root          52       2  0 16:25 ?        00:00:00 [kworker/R-scsi_tmf_0]
+root          53       2  0 16:25 ?        00:00:00 [scsi_eh_1]
+root          54       2  0 16:25 ?        00:00:00 [kworker/R-scsi_tmf_1]
+root          58       2  0 16:25 ?        00:00:00 [kworker/R-mld]
+root          59       2  0 16:25 ?        00:00:00 [kworker/R-ipv6_addrconf]
+root          67       2  0 16:25 ?        00:00:00 [kworker/R-kstrp]
+root          82       2  0 16:25 ?        00:00:00 [kworker/R-charger_manager]
+root         139       2  0 16:25 ?        00:00:00 [scsi_eh_2]
+root         140       2  0 16:25 ?        00:00:00 [kworker/R-scsi_tmf_2]
+root         181       2  0 16:25 ?        00:00:00 [jbd2/sda2-8]
+root         182       2  0 16:25 ?        00:00:00 [kworker/R-ext4-rsv-conversi
+root         265       2  0 16:25 ?        00:00:00 [irq/18-vmwgfx]
+root         266       2  0 16:25 ?        00:00:00 [kworker/R-ttm]
+root         272       1  0 16:25 ?        00:00:00 /usr/lib/systemd/systemd-ude
+root         366       2  0 16:25 ?        00:00:00 [psimon]
+systemd+     399       1  0 16:25 ?        00:00:00 /usr/lib/systemd/systemd-res
+root         599       2  0 16:25 ?        00:00:00 [kworker/R-cryptd]
+root         610       2  0 16:25 ?        00:00:00 [kworker/R-iprt-VBoxWQueue]
+avahi        612       1  0 16:25 ?        00:00:01 avahi-daemon: running [yasha
+message+     613       1  0 16:25 ?        00:00:04 @dbus-daemon --system --addr
+gnome-r+     616       1  0 16:25 ?        00:00:00 /usr/libexec/gnome-remote-de
+polkitd      619       1  0 16:25 ?        00:00:01 /usr/lib/polkit-1/polkitd --
+root         620       1  0 16:25 ?        00:00:00 /usr/libexec/power-profiles-
+root         625       1  0 16:25 ?        00:00:00 /usr/libexec/accounts-daemon
+root         626       1  0 16:25 ?        00:00:00 /usr/sbin/cron -f -P
+root         627       1  0 16:25 ?        00:00:00 /usr/libexec/switcheroo-cont
+root         629       1  0 16:25 ?        00:00:00 /usr/lib/systemd/systemd-log
+root         630       1  0 16:25 ?        00:00:00 /usr/libexec/udisks2/udisksd
+avahi        636     612  0 16:25 ?        00:00:00 avahi-daemon: chroot helper
+root         690       1  0 16:25 ?        00:00:02 /usr/sbin/NetworkManager --n
+root         692       1  0 16:25 ?        00:00:00 /usr/sbin/wpa_supplicant -u 
+root         724       1  0 16:25 ?        00:00:00 /usr/sbin/ModemManager
+syslog       727       1  0 16:25 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root        1074       1  0 16:25 ?        00:00:31 /usr/bin/VBoxDRMClient
+root        1087       1  0 16:25 ?        00:00:08 /usr/sbin/VBoxService --pidf
+root        1171       2  0 16:25 ?        00:00:00 [psimon]
+root        1199       1  0 16:25 ?        00:00:00 /usr/bin/python3 /usr/share/
+root        1218       1  0 16:25 ?        00:00:10 /usr/bin/containerd
+root        1247       1  0 16:25 ?        00:00:00 /usr/sbin/gdm3
+root        1279    1247  0 16:25 ?        00:00:00 gdm-session-worker [pam/gdm-
+kernoops    1295       1  0 16:25 ?        00:00:00 /usr/sbin/kerneloops --test
+kernoops    1299       1  0 16:25 ?        00:00:00 /usr/sbin/kerneloops
+yasha       1328       1  0 16:25 ?        00:00:02 /usr/lib/systemd/systemd --u
+yasha       1330    1328  0 16:25 ?        00:00:00 (sd-pam)
+root        1353       1  0 16:25 ?        00:00:03 /usr/bin/dockerd -H fd:// --
+yasha       1368    1328  0 16:25 ?        00:00:05 /usr/bin/pipewire
+yasha       1370    1328  0 16:25 ?        00:00:00 /usr/bin/pipewire -c filter-
+yasha       1374    1328  0 16:25 ?        00:00:00 /usr/bin/wireplumber
+yasha       1375    1328  0 16:25 ?        00:00:00 /usr/bin/pipewire-pulse
+yasha       1377    1328  0 16:25 ?        00:00:00 /usr/bin/gnome-keyring-daemo
+yasha       1395    1328  0 16:25 ?        00:00:01 /usr/bin/dbus-daemon --sessi
+rtkit       1419       1  0 16:25 ?        00:00:00 /usr/libexec/rtkit-daemon
+yasha       1431    1279  0 16:25 tty2     00:00:00 /usr/libexec/gdm-wayland-ses
+yasha       1436    1431  0 16:25 tty2     00:00:00 /usr/libexec/gnome-session-b
+yasha       1459    1328  0 16:25 ?        00:00:00 /usr/libexec/xdg-document-po
+yasha       1488    1328  0 16:25 ?        00:00:00 /usr/libexec/xdg-permission-
+root        1507    1459  0 16:25 ?        00:00:00 fusermount3 -o rw,nosuid,nod
+yasha       1521    1328  0 16:25 ?        00:00:00 /usr/libexec/gcr-ssh-agent -
+yasha       1523    1328  0 16:25 ?        00:00:00 /usr/libexec/gnome-session-c
+yasha       1530    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfsd
+yasha       1544    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfsd-fuse /run
+yasha       1550    1328  0 16:25 ?        00:00:00 /usr/libexec/gnome-session-b
+yasha       1594    1328  1 16:25 ?        00:03:31 /usr/bin/gnome-shell
+yasha       1595    1550  0 16:25 ?        00:00:00 /usr/libexec/at-spi-bus-laun
+yasha       1620    1595  0 16:25 ?        00:00:00 /usr/bin/dbus-daemon --confi
+yasha       1875    1328  0 16:25 ?        00:00:00 /usr/libexec/at-spi2-registr
+colord      1876       1  0 16:25 ?        00:00:00 /usr/libexec/colord
+yasha       1891    1328  0 16:25 ?        00:00:00 /snap/snapd-desktop-integrat
+yasha       1919    1328  0 16:25 ?        00:00:00 /usr/libexec/gnome-shell-cal
+yasha       1965    1891  0 16:25 ?        00:00:00 /snap/snapd-desktop-integrat
+yasha       1967    1328  0 16:25 ?        00:00:00 /usr/libexec/evolution-sourc
+yasha       1983    1328  0 16:25 ?        00:00:00 /usr/bin/gjs -m /usr/share/g
+root        1984       1  0 16:25 ?        00:00:01 /usr/libexec/upowerd
+yasha       1995    1328  0 16:25 ?        00:00:10 /usr/bin/ibus-daemon --panel
+yasha       1998    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-a11y-settin
+yasha       2002    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-color
+yasha       2005    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-datetime
+yasha       2006    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-housekeepin
+yasha       2007    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-keyboard
+yasha       2011    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-media-keys
+yasha       2012    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-power
+yasha       2014    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-print-notif
+yasha       2017    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-rfkill
+yasha       2018    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-screensaver
+yasha       2019    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-sharing
+yasha       2021    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-smartcard
+yasha       2022    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-sound
+yasha       2023    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-wacom
+yasha       2038    1550  0 16:25 ?        00:00:00 /usr/libexec/evolution-data-
+yasha       2049    1550  0 16:25 ?        00:00:00 /usr/libexec/gsd-disk-utilit
+yasha       2178    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-printer
+yasha       2192    1328  0 16:25 ?        00:00:00 /usr/libexec/goa-daemon
+yasha       2199    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfs-udisks2-vo
+yasha       2215    1995  0 16:25 ?        00:00:00 /usr/libexec/ibus-memconf
+yasha       2221    1995  0 16:25 ?        00:00:02 /usr/libexec/ibus-extension-
+yasha       2227    1328  0 16:25 ?        00:00:00 /usr/libexec/ibus-portal
+yasha       2246    1328  0 16:25 ?        00:00:00 /usr/libexec/evolution-calen
+yasha       2262    1328  0 16:25 ?        00:00:00 /usr/libexec/goa-identity-se
+yasha       2263    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfs-goa-volume
+yasha       2277    1328  0 16:25 ?        00:00:00 /usr/libexec/evolution-addre
+yasha       2282    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfs-gphoto2-vo
+yasha       2295    1328  0 16:25 ?        00:00:03 /usr/libexec/gvfs-afc-volume
+yasha       2304    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfs-mtp-volume
+yasha       2309    1594  0 16:25 ?        00:00:00 /usr/bin/Xwayland :0 -rootle
+yasha       2327    1995  0 16:25 ?        00:00:04 /usr/libexec/ibus-engine-sim
+yasha       2351    1328  0 16:25 ?        00:00:00 /usr/libexec/dconf-service
+yasha       2370    1328  0 16:25 ?        00:00:00 /usr/libexec/gvfsd-metadata
+yasha       2371    1530  0 16:25 ?        00:00:00 /usr/libexec/gvfsd-trash --s
+yasha       2425    1328  0 16:25 ?        00:00:00 /usr/libexec/tracker-miner-f
+yasha       2443    1328  0 16:25 ?        00:00:00 /usr/libexec/gsd-xsettings
+yasha       2447    1328  0 16:25 ?        00:00:00 /usr/bin/gjs -m /usr/share/g
+yasha       2458    1328  0 16:26 ?        00:00:00 /usr/libexec/xdg-desktop-por
+yasha       2467    1328  0 16:26 ?        00:00:00 /usr/libexec/xdg-desktop-por
+yasha       2499    1328  0 16:26 ?        00:00:00 /usr/libexec/xdg-desktop-por
+yasha       2510    1328  0 16:26 ?        00:00:00 /usr/libexec/ibus-x11
+yasha       2524    1328  0 16:26 ?        00:00:00 /usr/bin/VBoxClient --clipbo
+yasha       2525    2524  0 16:26 ?        00:00:00 /usr/bin/VBoxClient --clipbo
+yasha       2535    1594  0 16:26 ?        00:00:00 /usr/libexec/mutter-x11-fram
+yasha       2550    1328  0 16:26 ?        00:00:00 /usr/bin/VBoxClient --vmsvga
+yasha       2551    2550  0 16:26 ?        00:00:04 /usr/bin/VBoxClient --vmsvga
+yasha       2653    1550  0 16:26 ?        00:00:01 /usr/bin/update-notifier
+yasha       2993    1328  0 17:03 ?        00:00:04 /usr/bin/nautilus --gapplica
+yasha       3021    1530  0 17:03 ?        00:00:00 /usr/libexec/gvfsd-recent --
+yasha       3035    1328  0 17:03 ?        00:00:08 /usr/bin/gnome-text-editor /
+root        3152       1  0 17:17 ?        00:00:02 /usr/libexec/fwupd/fwupd
+root        3355       2  0 18:04 ?        00:00:00 [kworker/u5:0-ttm]
+yasha       4180    1328  0 19:47 ?        00:00:00 /usr/bin/python3 /usr/bin/gn
+yasha       4181    4180  0 19:47 ?        00:00:00 /usr/bin/gnome-terminal.real
+yasha       4187    1328  0 19:47 ?        00:00:10 /usr/libexec/gnome-terminal-
+yasha       4195    4187  0 19:47 pts/0    00:00:00 bash
+root        4246       1  0 20:15 ?        00:00:01 /snap/snapd/current/usr/lib/
+root        4250       1  0 20:15 ?        00:00:00 /usr/lib/systemd/systemd-jou
+systemd+    4257       1  0 20:15 ?        00:00:01 /usr/lib/systemd/systemd-oom
+root        4352       2  0 20:21 ?        00:00:00 [kworker/0:0H-kblockd]
+root        4455       2  0 20:26 ?        00:00:01 [kworker/u4:4-events_unbound
+root        4524       2  0 20:33 ?        00:00:00 [kworker/u4:1-flush-8:0]
+root        4559       2  0 20:40 ?        00:00:02 [kworker/u4:2-events_power_e
+root        4631       2  0 20:42 ?        00:00:00 [kworker/0:2H-kblockd]
+root        4658       2  0 20:46 ?        00:00:03 [kworker/0:1-events]
+root        4673       2  0 20:47 ?        00:00:00 [kworker/u5:2-ttm]
+root        4822       2  0 21:02 ?        00:00:00 [kworker/u4:0-flush-8:0]
+root        4836       2  0 21:06 ?        00:00:00 [kworker/0:0-cgroup_destroy]
+root        4848       2  0 21:12 ?        00:00:00 [kworker/u4:3-ext4-rsv-conve
+root        4874       2  0 21:14 ?        00:00:00 [kworker/u4:5]
+yasha       4892    1594  1 21:15 ?        00:00:00 gjs /usr/share/gnome-shell/e
+yasha       4932    4195 99 21:15 pts/0    00:00:00 ps -ef
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ 
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  23416 14516 ?        Ss   16:25   0:02 /sbin/init sp
+root           2  0.0  0.0      0     0 ?        S    16:25   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    16:25   0:00 [pool_workque
+root           4  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-rc
+root           5  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-sy
+root           6  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-kv
+root           7  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-sl
+root           8  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ne
+root          13  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-mm
+root          14  0.0  0.0      0     0 ?        I    16:25   0:00 [rcu_tasks_kt
+root          15  0.0  0.0      0     0 ?        I    16:25   0:00 [rcu_tasks_ru
+root          16  0.0  0.0      0     0 ?        I    16:25   0:00 [rcu_tasks_tr
+root          17  0.0  0.0      0     0 ?        S    16:25   0:01 [ksoftirqd/0]
+root          18  0.0  0.0      0     0 ?        I    16:25   0:02 [rcu_preempt]
+root          19  0.0  0.0      0     0 ?        S    16:25   0:00 [rcu_exp_par_
+root          20  0.0  0.0      0     0 ?        S    16:25   0:00 [rcu_exp_gp_k
+root          21  0.0  0.0      0     0 ?        S    16:25   0:00 [migration/0]
+root          22  0.0  0.0      0     0 ?        S    16:25   0:00 [idle_inject/
+root          23  0.0  0.0      0     0 ?        S    16:25   0:00 [cpuhp/0]
+root          24  0.0  0.0      0     0 ?        S    16:25   0:00 [kdevtmpfs]
+root          25  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-in
+root          26  0.0  0.0      0     0 ?        S    16:25   0:00 [kauditd]
+root          27  0.0  0.0      0     0 ?        S    16:25   0:00 [khungtaskd]
+root          29  0.0  0.0      0     0 ?        S    16:25   0:00 [oom_reaper]
+root          31  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-wr
+root          32  0.0  0.0      0     0 ?        S    16:25   0:02 [kcompactd0]
+root          33  0.0  0.0      0     0 ?        SN   16:25   0:00 [ksmd]
+root          34  0.0  0.0      0     0 ?        SN   16:25   0:00 [khugepaged]
+root          35  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ki
+root          36  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-kb
+root          37  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-bl
+root          38  0.0  0.0      0     0 ?        S    16:25   0:00 [irq/9-acpi]
+root          39  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-tp
+root          40  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-at
+root          41  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-md
+root          42  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-md
+root          43  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ed
+root          44  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-de
+root          45  0.0  0.0      0     0 ?        S    16:25   0:00 [watchdogd]
+root          47  0.0  0.0      0     0 ?        S    16:25   0:00 [kswapd0]
+root          48  0.0  0.0      0     0 ?        S    16:25   0:00 [ecryptfs-kth
+root          49  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-kt
+root          50  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ac
+root          51  0.0  0.0      0     0 ?        S    16:25   0:00 [scsi_eh_0]
+root          52  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-sc
+root          53  0.0  0.0      0     0 ?        S    16:25   0:00 [scsi_eh_1]
+root          54  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-sc
+root          58  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ml
+root          59  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ip
+root          67  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ks
+root          82  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ch
+root         139  0.0  0.0      0     0 ?        S    16:25   0:00 [scsi_eh_2]
+root         140  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-sc
+root         181  0.0  0.0      0     0 ?        S    16:25   0:00 [jbd2/sda2-8]
+root         182  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ex
+root         265  0.0  0.0      0     0 ?        S    16:25   0:00 [irq/18-vmwgf
+root         266  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-tt
+root         272  0.0  0.1  30616  8748 ?        Ss   16:25   0:00 /usr/lib/syst
+root         366  0.0  0.0      0     0 ?        S    16:25   0:00 [psimon]
+systemd+     399  0.0  0.1  21592 13344 ?        Ss   16:25   0:00 /usr/lib/syst
+root         599  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-cr
+root         610  0.0  0.0      0     0 ?        I<   16:25   0:00 [kworker/R-ip
+avahi        612  0.0  0.0   8752  4636 ?        Ss   16:25   0:01 avahi-daemon:
+message+     613  0.0  0.0  12004  6884 ?        Ss   16:25   0:04 @dbus-daemon 
+gnome-r+     616  0.0  0.2 512812 16480 ?        Ssl  16:25   0:00 /usr/libexec/
+polkitd      619  0.0  0.1 390496 11888 ?        Ssl  16:25   0:01 /usr/lib/polk
+root         620  0.0  0.0 313376  7372 ?        Ssl  16:25   0:00 /usr/libexec/
+root         625  0.0  0.1 313768  8280 ?        Ssl  16:25   0:00 /usr/libexec/
+root         626  0.0  0.0   9424  2944 ?        Ss   16:25   0:00 /usr/sbin/cro
+root         627  0.0  0.0 309888  6924 ?        Ssl  16:25   0:00 /usr/libexec/
+root         629  0.0  0.1  18148  9004 ?        Ss   16:25   0:00 /usr/lib/syst
+root         630  0.0  0.1 469680 14636 ?        Ssl  16:25   0:00 /usr/libexec/
+avahi        636  0.0  0.0   8480  1636 ?        S    16:25   0:00 avahi-daemon:
+root         690  0.0  0.2 336604 19648 ?        Ssl  16:25   0:02 /usr/sbin/Net
+root         692  0.0  0.0  17384  6532 ?        Ss   16:25   0:00 /usr/sbin/wpa
+root         724  0.0  0.1 392032 12968 ?        Ssl  16:25   0:00 /usr/sbin/Mod
+syslog       727  0.0  0.0 222564  6228 ?        Ssl  16:25   0:00 /usr/sbin/rsy
+root        1074  0.1  0.0 355648  2800 ?        Sl   16:25   0:31 /usr/bin/VBox
+root        1087  0.0  0.0 295784  3928 ?        Sl   16:25   0:08 /usr/sbin/VBo
+root        1171  0.0  0.0      0     0 ?        S    16:25   0:00 [psimon]
+root        1199  0.0  0.3 117972 25144 ?        Ssl  16:25   0:00 /usr/bin/pyth
+root        1218  0.0  0.5 1718712 45220 ?       Ssl  16:25   0:10 /usr/bin/cont
+root        1247  0.0  0.1 314820  9620 ?        Ssl  16:25   0:00 /usr/sbin/gdm
+root        1279  0.0  0.1 463604 11044 ?        Sl   16:25   0:00 gdm-session-w
+kernoops    1295  0.0  0.0  12744  2516 ?        Ss   16:25   0:00 /usr/sbin/ker
+kernoops    1299  0.0  0.0  12744  2612 ?        Ss   16:25   0:00 /usr/sbin/ker
+yasha       1328  0.0  0.1  21304 12692 ?        Ss   16:25   0:02 /usr/lib/syst
+yasha       1330  0.0  0.0  21464  3784 ?        S    16:25   0:00 (sd-pam)
+root        1353  0.0  0.9 1835204 78192 ?       Ssl  16:25   0:03 /usr/bin/dock
+yasha       1368  0.0  0.1 114860 14064 ?        Ssl  16:25   0:05 /usr/bin/pipe
+yasha       1370  0.0  0.0  97736  5980 ?        Ssl  16:25   0:00 /usr/bin/pipe
+yasha       1374  0.0  0.2 406852 18768 ?        Ssl  16:25   0:00 /usr/bin/wire
+yasha       1375  0.0  0.1 116952 14440 ?        Ssl  16:25   0:00 /usr/bin/pipe
+yasha       1377  0.0  0.1 316508 10340 ?        SLsl 16:25   0:00 /usr/bin/gnom
+yasha       1395  0.0  0.0  11144  6912 ?        Ss   16:25   0:01 /usr/bin/dbus
+rtkit       1419  0.0  0.0  88476  3536 ?        SNsl 16:25   0:00 /usr/libexec/
+yasha       1431  0.0  0.0 235668  6140 tty2     Ssl+ 16:25   0:00 /usr/libexec/
+yasha       1436  0.0  0.2 298236 16644 tty2     Sl+  16:25   0:00 /usr/libexec/
+yasha       1459  0.0  0.0 628748  7564 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1488  0.0  0.0 309308  6268 ?        Ssl  16:25   0:00 /usr/libexec/
+root        1507  0.0  0.0   2704  2040 ?        Ss   16:25   0:00 fusermount3 -
+yasha       1521  0.0  0.0 162652  6832 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1523  0.0  0.0  91548  5744 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1530  0.0  0.1 314268  8144 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1544  0.0  0.0 459708  7200 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       1550  0.0  0.2 667952 18444 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1594  1.2  5.2 3565732 427536 ?      Ssl  16:25   3:35 /usr/bin/gnom
+yasha       1595  0.0  0.0 382940  8016 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       1620  0.0  0.0   9616  5328 ?        S    16:25   0:00 /usr/bin/dbus
+yasha       1875  0.0  0.0 236068  7660 ?        Sl   16:25   0:00 /usr/libexec/
+colord      1876  0.0  0.1 320072 14660 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1891  0.0  0.1  39136 12148 ?        Ss   16:25   0:00 /snap/snapd-d
+yasha       1919  0.0  0.2 654776 17776 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       1965  0.0  0.3 429648 31124 ?        Sl   16:25   0:00 /snap/snapd-d
+yasha       1967  0.0  0.5 816532 43020 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       1983  0.0  0.3 2453676 26872 ?       Sl   16:25   0:00 /usr/bin/gjs 
+root        1984  0.0  0.1 317280  9680 ?        Ssl  16:25   0:01 /usr/libexec/
+yasha       1995  0.0  0.1 462372 12364 ?        Ssl  16:25   0:10 /usr/bin/ibus
+yasha       1998  0.0  0.0 383520  6848 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2002  0.0  0.2 412976 20720 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2005  0.0  0.1 431672 12348 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2006  0.0  0.0 458872  8008 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2007  0.0  0.2 411832 19908 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2011  0.0  0.3 741548 26044 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2012  0.0  0.3 597324 24740 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2014  0.0  0.1 323628 11100 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2017  0.0  0.0 531084  6808 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2018  0.0  0.0 309560  6292 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2019  0.0  0.1 543188 11996 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2021  0.0  0.1 385820  8312 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2022  0.0  0.1 393636  9840 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2023  0.0  0.2 486400 21036 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2038  0.0  0.7 826300 60328 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2049  0.0  0.0 305624  7724 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2178  0.0  0.1 416236 15196 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2192  0.0  0.3 546668 24420 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2199  0.0  0.1 463052 11740 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2215  0.0  0.0 236644  7204 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2221  0.0  0.3 421500 30180 ?        Sl   16:25   0:02 /usr/libexec/
+yasha       2227  0.0  0.0 310424  7304 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2246  0.0  0.3 694264 24472 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2262  0.0  0.1 389124  9420 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2263  0.0  0.0 309772  6624 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2277  0.0  0.3 686184 30032 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2282  0.0  0.0 310760  7048 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2295  0.0  0.1 389380  8212 ?        Ssl  16:25   0:03 /usr/libexec/
+yasha       2304  0.0  0.0 309792  6712 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2309  0.0  0.8 260700 71420 ?        S    16:25   0:00 /usr/bin/Xway
+yasha       2327  0.0  0.0 236896  7592 ?        Sl   16:25   0:04 /usr/libexec/
+yasha       2351  0.0  0.0 230240  6124 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2370  0.0  0.0 236304  6588 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2371  0.0  0.1 535708  9208 ?        Sl   16:25   0:00 /usr/libexec/
+yasha       2425  0.0  0.3 669232 27784 ?        SNsl 16:25   0:00 /usr/libexec/
+yasha       2443  0.0  1.0 640832 83816 ?        Ssl  16:25   0:00 /usr/libexec/
+yasha       2447  0.0  0.3 2592972 26940 ?       Sl   16:25   0:00 /usr/bin/gjs 
+yasha       2458  0.0  0.1 636076 14604 ?        Ssl  16:26   0:00 /usr/libexec/
+yasha       2467  0.0  0.5 556688 41152 ?        Ssl  16:26   0:00 /usr/libexec/
+yasha       2499  0.0  0.3 417760 26720 ?        Ssl  16:26   0:00 /usr/libexec/
+yasha       2510  0.0  0.3 266864 24404 ?        Sl   16:26   0:00 /usr/libexec/
+yasha       2524  0.0  0.0  19492  1588 ?        S    16:26   0:00 /usr/bin/VBox
+yasha       2525  0.0  0.0 218960  7224 ?        Sl   16:26   0:00 /usr/bin/VBox
+yasha       2535  0.0  1.2 823064 101628 ?       Sl   16:26   0:00 /usr/libexec/
+yasha       2550  0.0  0.0  19492  1584 ?        S    16:26   0:00 /usr/bin/VBox
+yasha       2551  0.0  0.0 151596  2500 ?        Sl   16:26   0:04 /usr/bin/VBox
+yasha       2653  0.0  0.4 569268 33636 ?        Sl   16:26   0:01 /usr/bin/upda
+yasha       2993  0.0  3.2 1154428 261184 ?      Sl   17:03   0:04 /usr/bin/naut
+yasha       3021  0.0  0.1 388492  9016 ?        Sl   17:03   0:00 /usr/libexec/
+yasha       3035  0.0  3.2 1195852 265824 ?      Sl   17:03   0:08 /usr/bin/gnom
+root        3152  0.0  0.5 554452 41844 ?        Ssl  17:17   0:02 /usr/libexec/
+root        3355  0.0  0.0      0     0 ?        I<   18:04   0:00 [kworker/u5:0
+yasha       4180  0.0  0.2  37688 21252 ?        S    19:47   0:00 /usr/bin/pyth
+yasha       4181  0.0  0.3 458920 29432 ?        Sl   19:47   0:00 /usr/bin/gnom
+yasha       4187  0.2  0.7 701428 57684 ?        Ssl  19:47   0:10 /usr/libexec/
+yasha       4195  0.0  0.0  11396  5644 pts/0    Ss   19:47   0:00 bash
+root        4246  0.0  0.4 1702196 38816 ?       Ssl  20:15   0:01 /snap/snapd/c
+root        4250  0.0  0.2  50644 17560 ?        S<s  20:15   0:00 /usr/lib/syst
+systemd+    4257  0.0  0.0  17564  7688 ?        Ss   20:15   0:01 /usr/lib/syst
+root        4352  0.0  0.0      0     0 ?        I<   20:21   0:00 [kworker/0:0H
+root        4455  0.0  0.0      0     0 ?        I    20:26   0:01 [kworker/u4:4
+root        4524  0.0  0.0      0     0 ?        I    20:33   0:01 [kworker/u4:1
+root        4559  0.0  0.0      0     0 ?        I    20:40   0:02 [kworker/u4:2
+root        4631  0.0  0.0      0     0 ?        I<   20:42   0:00 [kworker/0:2H
+root        4658  0.1  0.0      0     0 ?        I    20:46   0:03 [kworker/0:1-
+root        4673  0.0  0.0      0     0 ?        I<   20:47   0:00 [kworker/u5:2
+root        4822  0.0  0.0      0     0 ?        I    21:02   0:00 [kworker/u4:0
+root        4836  0.0  0.0      0     0 ?        I    21:06   0:00 [kworker/0:0-
+root        4848  0.0  0.0      0     0 ?        I    21:12   0:00 [kworker/u4:3
+root        4874  0.0  0.0      0     0 ?        I    21:14   0:00 [kworker/u4:5
+yasha       4892  0.1  0.7 2805888 60448 ?       Sl   21:15   0:00 gjs /usr/shar
+root        4945  0.0  0.0      0     0 ?        I    21:16   0:00 [kworker/0:2-
+yasha       4950  0.0  0.0  13616  4660 pts/0    R+   21:17   0:00 ps aux
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ nano Question_3
+yasha@yasha-VirtualBox:~/embedUr-Training/Linux-Training$ 
+

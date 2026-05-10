@@ -1,0 +1,107 @@
+#ftp uses two channels on for data and another for control
+#control channel on port 21 for transferring commands
+#data channel for actual transfer of data
+
+#update the existing packages before installing ftp server
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo apt update
+[sudo] password for yasha: 
+Hit:1 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu noble InRelease   
+Hit:2 https://download.docker.com/linux/ubuntu noble InRelease                 
+Get:3 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]      
+Hit:4 http://in.archive.ubuntu.com/ubuntu noble InRelease
+
+ # install the ftp server
+ 
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo apt install vsftpd
+[sudo] password for yasha: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+vsftpd is already the newest version (3.0.5-0ubuntu3.1).
+The following packages were automatically installed and are no longer required:
+  libgl1-amber-dri libglapi-mesa libllvm19
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 84 not upgraded.
+ 
+#check the status of the server if its enabled and running
+ 
+ yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl status vsftpd
+● vsftpd.service - vsftpd FTP server
+     Loaded: loaded (/usr/lib/systemd/system/vsftpd.service; enabled; preset: e> 
+     Active: active (running) since Mon 2026-03-02 17:19:23 IST; 1h 28min ago
+   Main PID: 1047 (vsftpd)
+      Tasks: 1 (limit: 9432)
+     Memory: 924.0K (peak: 1.5M)
+        CPU: 79ms
+     CGroup: /system.slice/vsftpd.service
+             └─1047 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Mar 02 17:19:22 yasha-VirtualBox systemd[1]: Starting vsftpd.service - vsftpd F> 
+Mar 02 17:19:23 yasha-VirtualBox systemd[1]: Started vsftpd.service - vsftpd FT> 
+
+#make changes to the config file and then restart the server
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+allow_writeable_chroot=YES 
+
+#Restart the server
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo systemctl restart vsftpd
+
+#put and get operations
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ ftp localhost
+Connected to localhost.
+220 (vsFTPd 3.0.5)
+Name (localhost:yasha): yasha
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> put file1.txt
+local: file1.txt remote: file1.txt
+229 Entering Extended Passive Mode (|||22331|)
+150 Ok to send data.
+100% |*********************************|    10       78.75 KiB/s    00:00 ETA
+226 Transfer complete.
+10 bytes sent in 00:00 (1.01 KiB/s)
+ftp> get file1.txt
+local: file1.txt remote: file1.txt
+229 Entering Extended Passive Mode (|||7454|)
+150 Opening BINARY mode data connection for file1.txt (10 bytes).
+100% |*********************************|    10       47.40 KiB/s    00:00 ETA
+226 Transfer complete.
+10 bytes received in 00:00 (0.73 KiB/s)
+ftp> exit
+221 Goodbye.
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ 
+
+
+#sftp
+#unlike ftp it uses only one channel and its secure 
+#runs on port 22
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sudo apt install openssh-server
+[sudo] password for yasha: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+openssh-server is already the newest version (1:9.6p1-3ubuntu13.14).
+The following packages were automatically installed and are no longer required:
+  libgl1-amber-dri libglapi-mesa libllvm19
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 84 not upgraded.
+
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ sftp yasha@localhost
+yasha@localhost's password: 
+Connected to localhost.
+sftp> put file1.txt
+Uploading file1.txt to /home/yasha/file1.txt
+file1.txt                                            100%   10     2.1KB/s   00:00    
+sftp> get file1.txt
+Fetching /home/yasha/file1.txt to file1.txt
+file1.txt                                            100%   10     6.2KB/s   00:00    
+sftp> exit
+yasha@yasha-VirtualBox:~/embedUr-Training/Networking-Training/Module_1_2$ 
+

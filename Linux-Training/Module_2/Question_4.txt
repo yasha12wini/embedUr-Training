@@ -1,0 +1,4 @@
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ ps aux --sort=-%mem |awk 'NR==2 {print $2, $11}'
+4862 /snap/firefox/7720/usr/lib/firefox/firefox
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ kill -9 4862
+yasha@yasha-VirtualBox:~/embedUr-Training/Module_2$ 
