@@ -1,0 +1,44 @@
+Wireless Device Capability & Generation Analysis
+
+1. Primary Device Profile
+Device Under Test: Laptop (Intel-based)
+Wireless Adapter: Intel(R) Wi-Fi 6E AX211 160MHz
+Host AP: Nothing Phone (2a) Mobile Hotspot2.
+
+2. Technical Property Breakdown
+Based on real-time netsh telemetry, the link properties across two distinct test scenarios (2.4 GHz vs. 5 GHz).
+ 
+Scenario A (2.4 GHz)
+SSID: Nothing Phone (2a)_9367
+Type: 802.11ax
+Channel: 13
+Authentication: WPA3-Personal
+Cipher: CCMP (AES)
+Signal Strength: 26 dBm (99%)
+PHY Rate (Rx/Tx): 287 Mbps
+
+Scenario B (5 GHz)
+SSID: Nothing Phone (2a)_9367Radio
+Type: 802.11ax
+Channel: 149
+Authentication: WPA3-Personal
+Cipher: CCMP (AES)
+Signal Strength: 36 dBm (95%)
+PHY Rate (Rx/Tx)287 Mbps: 1201 Mbps
+
+
+3. Matching to Wi-Fi Generations
+Based on the properties observed, the device corresponds to Wi-Fi 6 (802.11ax).
+Although the hardware (AX211) is Wi-Fi 6E capable, the current operational state is defined as follows:
+
+Generation Match: Wi-Fi 6 (HE - High Efficiency)
+Standard: IEEE 802.11ax
+Reasoning:
+Modulation: The 1201 Mbps rate indicates the use of 1024-QAM (MCS 11), a hallmark of Wi-Fi 6.Efficiency: The jump to 1201 Mbps confirms an 80 MHz channel width with 2 Spatial Streams (2x2 MIMO).
+In the 2.4 GHz scenario, the rate of 287 Mbps confirms a 20 MHz channel width, which is the maximum efficiency for 802.11ax on that narrow band.
+
+Security: The use of WPA3-Personal (SAE) aligns with the mandatory security requirements introduced alongside the Wi-Fi 6 certification.
+
+While the Wi-Fi 6 standard theoretically supports up to 9.6 Gbps, this specific connection is limited to 1.2 Gbps (1201 Mbps).This is due to the Physical Layer constraints like Channel Width: The connection uses 80 MHz instead of the maximum 160 MHz.
+MIMO Configuration: The link uses 2x2 MIMO (standard for mobile/laptop) instead of the theoretical 8x8 MIMO.
+Frequency Band: While the adapter supports the 6 GHz band (Wi-Fi 6E), the Access Point (Hotspot) is currently restricted to the 5 GHz band.
